@@ -1,0 +1,37 @@
+# during development, when you are constantly changing and debugging the code, 
+# it’s sometimes useful to keep the app running natively outside of Docker, 
+# but still running dependencies via Docker. 
+# This can be achieved in the same docker-compose.yml file 
+# by adding a special deps service (or however you want to call it) that will 
+# just start the dependencies and exit. It can be invoked as follows:
+
+# docker compose run deps
+
+
+
+version: '3'
+services:
+  custom_service:
+    image: custom_service
+    container_name: custom_service
+    build: .    
+    ports:
+      - "8095:8080"
+
+  deps:
+    image: busybox
+    links:
+        - db
+        - mail
+    command: "true"
+
+  db:
+    image: postgres
+    ports:
+        - "15432:5432"
+
+  mail:
+    image: mailhog/mailhog
+    ports: 
+        - "1025:1025"
+        - "8025:8025"
