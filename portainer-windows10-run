@@ -1,0 +1,9 @@
+1. switch to Windows containers
+2. open Settings - activate the option "Expose daemon on tcp://localhost:2375 without TLS (last Option)."
+3. From PowerShell use :
+docker run -d -p 9000:9000 --name portainer --restart always -v \\.\pipe\docker_engine:\\.\pipe\docker_engine -v portainer_data:C:\data portainer/portainer
+
+More information at:
+https://lemariva.com/blog/2018/05/tutorial-portainer-for-local-docker-environments-on-windows-10
+https://stackoverflow.com/questions/51712934/invalid-volume-specification-trying-to-run-portainer-container
+https://www.portainer.io/installation/
