@@ -19,5 +19,5 @@ https://www.bojankomazec.com/2020/02/running-pgadmin-in-docker-container.html
 
 ### Connect server to pgadmin
 1. See Container details for PostgresqlC IP address
-2. Open <IP address of pgadmin>:5051
-3. Connect to <IP address of PostgresqlC> with postgres & POSTGRES_PASSWORD
+2. Open \<IP address of pgadmin\>:5051
+3. Connect to \<IP address of PostgresqlC\> with postgres & POSTGRES_PASSWORD
