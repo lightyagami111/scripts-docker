@@ -1,4 +1,9 @@
 1. switch to Windows containers
+2. https://docs.portainer.io/v/ce-2.9/start/install/server/docker/wcs
+
+
+OLD ==========
+1. switch to Windows containers
 2. open Settings - activate the option "Expose daemon on tcp://localhost:2375 without TLS (last Option)."
 3. From PowerShell use :
 docker run -d -p 9000:9000 --name portainer --restart always -v \\.\pipe\docker_engine:\\.\pipe\docker_engine -v portainer_data:C:\data portainer/portainer
